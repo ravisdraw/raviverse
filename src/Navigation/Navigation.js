@@ -17,7 +17,7 @@ function Navigation() {
 
     useEffect(() => {
         const toggleVisibility = () => {
-            if (window.pageYOffset > 300) {
+            if (window.pageYOffset > 200) {
                 setIsVisible(true);
             } else {
                 setIsVisible(false);
@@ -29,20 +29,22 @@ function Navigation() {
         return () => window.removeEventListener('scroll', toggleVisibility);
     }, []);
 
-    const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    };
+    // const scrollToTop = () => {
+    //     window.scrollTo({
+    //         top: 0,
+    //         behavior: 'smooth'
+    //     });
+    // };
 
     return (
         <header>
-            {isVisible &&
-                <button className="scroll-to-top-btn" onClick={scrollToTop}>
-                    Up
-                </button>
-            }
+            <Link to="nav" smooth={true}>
+                {isVisible &&
+                    <button className="scroll-to-top-btn" >
+                        Up
+                    </button>
+                }
+            </Link>
             <div className="brand">
                 <div className="logo"></div>
                 <label>RaviVerse</label>

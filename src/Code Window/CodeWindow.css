@@ -1,11 +1,12 @@
 .copilot-wrapper {
     width: 70%;
-    height: 35rem;
+    height: 50rem;
     display: flex;
     justify-content: center;
     /* background-color: blue; */
     margin: 3%;
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    position: relative;
 
 }
 
@@ -16,10 +17,12 @@
     border: 0.1px solid #484f58;
     border-radius: 0.5rem;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .window-titles {
-    width: 90%;
+    width: 95%;
     height: 12%;
     background-color: #1B1F24;
     border-radius: 0.2rem 0.2rem 0 0;
@@ -63,6 +66,40 @@
     border: 1px solid #484f58;
     border-bottom: none;
     background-color: #24292F;
+}
+
+.window-content {
+    width: 100%;
+    height: 90%;
+    position: relative;
+    overflow: hidden;
+}
+
+.side-numbers {
+    position: absolute;
+    width: 3rem;
+    height: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    top: 1rem;
+}
+
+.side-numbers p {
+    margin: 0;
+    font-style: normal;
+    color: rgb(179, 179, 179);
+}
+
+.animated-text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1rem;
 }
 
 @media only screen and (max-width: 767px) {

@@ -95,6 +95,7 @@ header {
     align-items: center;
     transition: opacity 0.3s ease-in-out;
     animation: pop-in 0.5s ease-in-out;
+    z-index: 999;
 }
 
 @keyframes pop-in {
@@ -168,6 +169,7 @@ header {
         position: absolute;
         top: 0;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        z-index: 2;
     }
 
     .ham-menu-container {

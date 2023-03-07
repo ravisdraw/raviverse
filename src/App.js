@@ -8,7 +8,9 @@ import { Element } from 'react-scroll';
 function App() {
   return (
     <div className="main-wrapper">
-      <Navigation />
+      <Element name="nav">
+        <Navigation />
+      </Element>
       <LandingNote />
       <Element name="Projects">
         <Projects />
