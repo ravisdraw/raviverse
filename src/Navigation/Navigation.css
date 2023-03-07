@@ -113,8 +113,8 @@ header {
     }
 
     .brand .logo {
-        width: 3rem;
-        height: 3rem;
+        width: 2.5rem;
+        height: 2.5rem;
     }
 
     .hamburger {
@@ -130,6 +130,7 @@ header {
         background-color: #24292F;
         position: absolute;
         top: 0;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
 
     .ham-menu-container {

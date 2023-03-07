@@ -17,7 +17,7 @@
 }
 
 .window-titles {
-    width: 95%;
+    width: 90%;
     height: 12%;
     background-color: #1B1F24;
     border-radius: 0.2rem 0.2rem 0 0;
@@ -52,6 +52,10 @@
     padding-left: 5%;
 }
 
+.window-titles:last-child {
+    padding-right: 5%;
+}
+
 .active {
     color: white;
     border: 1px solid #484f58;
@@ -63,7 +67,7 @@
 
     .copilot-wrapper {
         width: 90%;
-        height: 30rem;
+        height: 33rem;
         display: flex;
         justify-content: center;
         /* background-color: blue; */
@@ -72,7 +76,7 @@
     }
 
     .window-title {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         padding: 0rem 0.6rem 0 0.6rem;
     }
 
