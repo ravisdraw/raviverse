@@ -6,7 +6,7 @@ import { useState } from 'react';
 function CodeWindow() {
 
     const [activeIndex, setActiveIndex] = useState(0);
-    const titleArray = ['JavaScript', 'UI/UX', 'Angular', 'React'];
+    const titleArray = ['JavaScript', 'UI/UX Designs', 'Angular', 'React'];
 
 
     function handleTitleClick(index) {

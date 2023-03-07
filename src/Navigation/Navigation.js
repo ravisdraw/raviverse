@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Navigation.css'
 import { Divide as Hamburger } from 'hamburger-react'
+import { Link } from 'react-scroll';
+
 
 function Navigation() {
 
@@ -11,17 +13,47 @@ function Navigation() {
 
     const navItems = ['Projects', 'Certification', 'Skills', 'Experiance', 'Hire Me', 'Profile'];
 
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const toggleVisibility = () => {
+            if (window.pageYOffset > 300) {
+                setIsVisible(true);
+            } else {
+                setIsVisible(false);
+            }
+        };
+
+        window.addEventListener('scroll', toggleVisibility);
+
+        return () => window.removeEventListener('scroll', toggleVisibility);
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
     return (
         <header>
+            {isVisible &&
+                <button className="scroll-to-top-btn" onClick={scrollToTop}>
+                    Up
+                </button>
+            }
             <div className="brand">
                 <div className="logo"></div>
                 <label>RaviVerse</label>
             </div>
             {navItems.map((item, index) =>
-                <div className="nav-item-box">
-                    <div className="nav-items" key={index}>{item}</div>
-                    <div className="underline"></div>
-                </div>
+                <Link to={item} smooth={true}>
+                    <div className="nav-item-box">
+                        <div className="nav-items" key={index}>{item}</div>
+                        <div className="underline"></div>
+                    </div>
+                </Link>
             )
             }
 
