@@ -1,0 +1,84 @@
+.copilot-wrapper {
+    width: 70%;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    /* background-color: blue; */
+    margin: 3%;
+
+}
+
+.window-container {
+    height: 100%;
+    width: 100%;
+    background-color: #24292F;
+    border: 1px solid #484f58;
+    border-radius: 0.5rem;
+}
+
+.window-titles {
+    width: 95%;
+    height: 12%;
+    background-color: #1B1F24;
+    border-radius: 0.2rem 0.2rem 0 0;
+    border-bottom: 1px solid #484f58;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-bottom: 0.2rem;
+    gap: 2rem;
+    border-radius: 0.5rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.window-title {
+    font-size: 0.9rem;
+    height: 75%;
+    color: rgb(179, 179, 179);
+    display: flex;
+    align-items: center;
+    padding: 0rem 0.5rem 0 0.5rem;
+    border-radius: 0.2rem 0.2rem 0 0;
+    cursor: pointer;
+    /* transition: background-color 0.2s ease; */
+}
+
+.window-title:hover {
+    color: white;
+}
+
+.window-titles:first-child {
+    padding-left: 5%;
+}
+
+.active {
+    color: white;
+    border: 1px solid #484f58;
+    border-bottom: none;
+    background-color: #24292F;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .copilot-wrapper {
+        width: 90%;
+        height: 30rem;
+        display: flex;
+        justify-content: center;
+        /* background-color: blue; */
+        margin: 3%;
+
+    }
+
+    .window-title {
+        font-size: 0.8rem;
+        padding: 0rem 0.6rem 0 0.6rem;
+    }
+
+    .window-titles {
+        overflow: scroll;
+        overflow-y: hidden;
+    }
+
+}

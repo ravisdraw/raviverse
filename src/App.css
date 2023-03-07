@@ -1,5 +1,5 @@
 .main-wrapper {
   width: 100vw;
   height: 500vh;
-  background: linear-gradient(to bottom, #2C2445, #1B1F24);
+  background: linear-gradient(to bottom, #2C2445 0%, #1B1F24 40%);
 }
