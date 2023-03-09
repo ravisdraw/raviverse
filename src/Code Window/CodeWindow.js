@@ -5,8 +5,6 @@ import { useState } from 'react';
 import AnimatedText from '../Elements/Animated Text/AnimatedText';
 import Card from '../Elements/Card/Card';
 
-import SmallModal from '../Elements/Small Modal/SmallModal';
-
 function AnimationRender() {
     const [count, setCount] = useState(1);
 
