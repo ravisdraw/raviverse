@@ -7,11 +7,33 @@ import AnimatedText from '../Elements/Animated Text/AnimatedText';
 function CodeWindow() {
 
     const [activeIndex, setActiveIndex] = useState(0);
-    const titleArray = ['JavaScript', 'UI/UX Designs', 'Angular', 'React'];
+    const titleArray = ['Projects', 'Project Details', 'Source Code'];
+
+    const js = {
+        title: { text: 'I invite you to explore the projects I have completed' },
+        comment: { text: '// Please change tabs to view more details' },
+        line_1: { text: 'I have worked on various projects using latest technologies' },
+        important_1: { text: 'I have also worked on UI/UX designing' },
+        important_2: { text: 'Like JavaScript, React JS, Angular, Python' },
+        line_4: { text: 'The source code is also available for review' },
+        line_5: { text: 'This will give you a better understanding of my technical skills' },
+        line_6: { text: 'I have expertise in various programming languages and design tools' }
+    }
+
+
+    const data = js;
 
 
     function handleTitleClick(index) {
         setActiveIndex(index);
+        if (index !== 0) {
+            document.getElementById('animate').style.display = 'none';
+            document.getElementById('tab').style.display = 'flex';
+        }
+        if (index === 0) {
+            document.getElementById('tab').style.display = 'none';
+            document.getElementById('animate').style.display = 'flex';
+        }
     }
 
     const numbers = [];
@@ -23,26 +45,36 @@ function CodeWindow() {
     const [count, setCount] = useState(1);
 
     useEffect(() => {
-        if (count <= 10) {
+        if (count <= 8) {
             const timer = setTimeout(() => {
                 setCount(count + 1);
-            }, 1500);
+            }, 2000);
             return () => clearTimeout(timer);
         }
     }, [count]);
 
-    const js = {
-        title: { name: '// Javascript Projects', color: "gray" },
-        project_1: { name: 'New year Count down', color: "red" },
-        project_2: { name: 'Image Slider Preview', color: "orange" },
-        project_3: { name: 'New year Count down', color: "gray" },
-        project_4: { name: 'Image Slider Preview', color: "blue" },
-        project_5: { name: 'New year Count down', color: "gray" },
-        project_6: { name: 'New year Count down', color: "blue" },
-        project_7: { name: 'Image Slider Preview', color: "gray" },
-        project_8: { name: 'New year Count down', color: "gray" },
-        project_9: { name: 'Image Slider Preview', color: "blue" }
-    }
+
+    const projectList = [
+        "New Year Countdown",
+        "Digital Clock",
+        "Analog Clock",
+        "Stopwatch",
+        "CSS Generator",
+        "Password Generator",
+        "Photo Gallery",
+        "Image Slider",
+        "Sticky Notes",
+        "Image Search",
+    ];
+
+    const [activeProject, setActiveProject] = useState('');
+
+    const handleProjectClick = (data) => {
+        setActiveProject(data);
+        console.log(data);
+    };
+
+
 
     return (
         <div className='copilot-wrapper'>
@@ -60,27 +92,32 @@ function CodeWindow() {
                 </div>
                 <div className="window-content">
                     <div className="side-numbers">
-                        {numbers.map((number) => (
-                            <p>{number}</p>
+                        {numbers.map((number, index) => (
+                            <p key={index}>{number}</p>
                         ))}
                     </div>
-                    <div className="animated-text">
-                        {/* {[...Array(10)].map((_, index) => {
+
+                    <div className="animated-text" id='animate'>
+                        {Object.entries(data).map((item, index) => {
                             if (index < count) {
-                                return <AnimatedText text={js[0]} />;
-                            } else {
-                                return null;
-                            }
-                        })} */}
-                        {Object.keys(js).map((key, index) => {
-                            if (index < count) {
-                                return <AnimatedText key={index} text={js[key]} />;
+                                return <AnimatedText key={index} text={item} />;
                             } else {
                                 return null;
                             }
                         })}
                     </div>
-                    {/* <div className="title-text">JavaScript</div> */}
+
+                    <div className="animated-text tab" id='tab'>
+                        {
+                            projectList.map((item, index) =>
+                                <p
+                                    key={index}
+                                    className={index === activeProject ? 'activeProject' : ''}
+                                    onClick={() => handleProjectClick(item)}
+                                >{item}</p>
+                            )
+                        }
+                    </div>
                 </div>
             </div>
         </div>

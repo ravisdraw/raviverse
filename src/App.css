@@ -1,5 +1,8 @@
 .main-wrapper {
   width: 100vw;
   height: 500vh;
-  background: linear-gradient(to bottom, #2C2445 0%, #1B1F24 40%);
+  background: linear-gradient(to bottom, #2C2445 0%, #1B1F24 60%);
+  user-select: none;
+  overflow: scroll;
+  overflow-x: hidden;
 }

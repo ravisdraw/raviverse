@@ -12,6 +12,7 @@ function Navigation() {
     };
 
     const navItems = ['Projects', 'Certification', 'Skills', 'Experiance', 'Hire Me', 'Profile'];
+    const navMobItems = ['Hire Me', 'About Me']
 
     const [isVisible, setIsVisible] = useState(false);
 
@@ -38,46 +39,34 @@ function Navigation() {
 
     return (
         <header>
-            <Link to="nav" smooth={true}>
-                {isVisible &&
-                    <button className="scroll-to-top-btn" >
-                        Up
-                    </button>
-                }
+            <Link to="Navigation" smooth={true}>
+                {isVisible && <button className="scroll-to-top-btn" >Up</button>}
             </Link>
             <div className="brand">
                 <div className="logo"></div>
                 <label>RaviVerse</label>
             </div>
             {navItems.map((item, index) =>
-                <Link to={item} smooth={true}>
-                    <div className="nav-item-box">
-                        <div className="nav-items" key={index}>{item}</div>
+                <Link to={item} smooth={true} key={index}>
+                    <div className="nav-item-box" >
+                        <div className="nav-items">{item}</div>
                         <div className="underline"></div>
                     </div>
                 </Link>
             )
             }
 
-            {/* <div className="nav-items">Projects</div>
-            <div className="underline"></div>
-            <div className="nav-items">Certifications</div>
-            <div className="nav-items">Skills</div>
-            <div className="nav-items">Experiance</div>
-            <div className="nav-items">Hire Me</div>
-            <div className="nav-items">Profile</div> */}
-
             <div className="hamburger" onClick={() => setShowSidebar(!showSidebar)} >
                 <Hamburger size={28} />
             </div>
             <div className="ham-menu" style={hamStyle}>
                 <div className="ham-menu-container">
-                    <div className="ham-items">Projects</div>
-                    <div className="ham-items">Certifications</div>
-                    <div className="ham-items">Skills</div>
-                    <div className="ham-items">Experiance</div>
-                    <div className="ham-items">Hire Me</div>
-                    <div className="ham-items">Profile</div>
+                    {navMobItems.map((item, index) =>
+                        <Link to={item} smooth={true} key={index}>
+                            <div className="ham-items" >{item}</div>
+                        </Link>
+                    )
+                    }
                 </div>
             </div>
 

@@ -1,5 +1,5 @@
 .copilot-wrapper {
-    width: 70%;
+    width: 65%;
     height: 50rem;
     display: flex;
     justify-content: center;
@@ -38,7 +38,7 @@
 }
 
 .window-title {
-    font-size: 0.9rem;
+    font-size: 1rem;
     height: 75%;
     color: rgb(179, 179, 179);
     display: flex;
@@ -102,6 +102,22 @@
     margin-top: 1rem;
 }
 
+.tab>p {
+    font-style: normal;
+    color: white;
+    cursor: pointer;
+}
+
+.activeproject {
+    color: #79C0FF;
+}
+
+p:hover {
+    color: #79C0FF;
+    cursor: pointer;
+}
+
+
 @media only screen and (max-width: 767px) {
 
     .copilot-wrapper {
@@ -122,6 +138,16 @@
     .window-titles {
         overflow: scroll;
         overflow-y: hidden;
+        gap: 0;
+    }
+
+    .animated-text {
+        width: 100%;
+        overflow: scroll;
+    }
+
+    .side-numbers {
+        display: none;
     }
 
 }

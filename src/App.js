@@ -4,17 +4,12 @@ import Navigation from './Navigation/Navigation';
 import Projects from './Projects/Projects';
 import { Element } from 'react-scroll';
 
-
 function App() {
   return (
     <div className="main-wrapper">
-      <Element name="nav">
-        <Navigation />
-      </Element>
+      <Element name="Navigation"> <Navigation /> </Element>
       <LandingNote />
-      <Element name="Projects">
-        <Projects />
-      </Element>
+      <Element name="Projects"> <Projects /> </Element>
     </div>
   );
 }

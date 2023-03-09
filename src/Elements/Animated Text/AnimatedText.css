@@ -7,3 +7,9 @@ p {
     font-style: italic;
     margin: 0 0 0 3rem
 }
+
+@media only screen and (max-width: 767px) {
+    p {
+        margin: 0 0 0 1rem;
+    }
+}
