@@ -1,15 +1,13 @@
-/* Google Fonts */
-@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
-
-p {
-    font-size: 0.9rem;
+.animate-wrapper>p {
+    font-size: 1rem;
     color: rgb(176, 176, 176);
-    font-style: italic;
-    margin: 0 0 0 3rem
+    margin: 0 0 0 5rem;
+    font-family: Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;
+    letter-spacing: -0.3px;
 }
 
 @media only screen and (max-width: 767px) {
-    p {
-        margin: 0 0 0 1rem;
+    .animate-wrapper>p {
+        margin: 1rem 1rem;
     }
 }

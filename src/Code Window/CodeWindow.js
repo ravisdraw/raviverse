@@ -3,11 +3,29 @@ import './CodeWindow.css'
 
 import { useState } from 'react';
 import AnimatedText from '../Elements/Animated Text/AnimatedText';
+import Card from '../Elements/Card/Card';
+
+import SmallModal from '../Elements/Small Modal/SmallModal';
+
+function AnimationRender() {
+    const [count, setCount] = useState(1);
+
+    useEffect(() => {
+        if (count <= 8) {
+            const timer = setTimeout(() => {
+                setCount(count + 1);
+            }, 2000);
+            return () => clearTimeout(timer);
+        }
+    }, [count]);
+
+    return count;
+}
 
 function CodeWindow() {
 
     const [activeIndex, setActiveIndex] = useState(0);
-    const titleArray = ['Projects', 'Project Details', 'Source Code'];
+    const titleArray = ['Projects', 'Javascript', 'UI/UX', 'Angular', 'React', 'Python'];
 
     const js = {
         title: { text: 'I invite you to explore the projects I have completed' },
@@ -26,13 +44,18 @@ function CodeWindow() {
 
     function handleTitleClick(index) {
         setActiveIndex(index);
+        setSelectedTitle(projectList[0]);
+        setIsActiveLine(true);
         if (index !== 0) {
             document.getElementById('animate').style.display = 'none';
             document.getElementById('tab').style.display = 'flex';
+
         }
         if (index === 0) {
             document.getElementById('tab').style.display = 'none';
             document.getElementById('animate').style.display = 'flex';
+            setSelectedTitle('');
+            setIsActiveLine(false);
         }
     }
 
@@ -41,17 +64,6 @@ function CodeWindow() {
     for (let i = 1; i <= 20; i++) {
         numbers.push(i);
     }
-
-    const [count, setCount] = useState(1);
-
-    useEffect(() => {
-        if (count <= 8) {
-            const timer = setTimeout(() => {
-                setCount(count + 1);
-            }, 2000);
-            return () => clearTimeout(timer);
-        }
-    }, [count]);
 
 
     const projectList = [
@@ -67,14 +79,37 @@ function CodeWindow() {
         "Image Search",
     ];
 
-    const [activeProject, setActiveProject] = useState('');
+    const demoObject = [
+        {
+            id: 1,
+            title: 'New Year Countdown',
+            img: 'https://i.imgur.com/Y0qKfmS.png',
+            desc: "DOM selection: Select the HTML elements for displaying the countdown timer.",
+            viewUrl: 'https://ravisdraw.github.io/js-projects/01%20NewYear%20CountDown/index.html',
+            sourceCode: 'https://gist.github.com/ravisdraw/38ec38671c7f138a9d28578029d4f271'
+        },
+        {
+            id: 2,
+            title: 'Digital Clock',
+            img: 'https://i.imgur.com/vScDs74.png',
+            desc: "Selects clock elements in HTML with class names '.h', '.m', '.s'",
+            viewUrl: 'https://ravisdraw.github.io/js-projects/02%20Digital%20Clock/index.html',
+            sourceCode: 'https://gist.github.com/ravisdraw/bc2662a09b04939a4f5192f868a30acc'
+        },
+        {
+            id: 3,
+            title: 'Analog Clock',
+            img: 'https://i.imgur.com/jYF20ip.png',
+            desc: "Calculates the degree of rotation for each hand based on the time.",
+            viewUrl: 'https://ravisdraw.github.io/js-projects/03%20Analog%20Clock/index.html',
+            sourceCode: 'https://gist.github.com/ravisdraw/ab9a8c790a741683a9e479dee242e2bd'
+        }
+    ]
 
-    const handleProjectClick = (data) => {
-        setActiveProject(data);
-        console.log(data);
-    };
+    const [isActiveLine, setIsActiveLine] = useState(false);
+    const [selectedTitle, setSelectedTitle] = useState('');
 
-
+    const filteredObjects = demoObject.filter(obj => obj.title === selectedTitle);
 
     return (
         <div className='copilot-wrapper'>
@@ -99,7 +134,7 @@ function CodeWindow() {
 
                     <div className="animated-text" id='animate'>
                         {Object.entries(data).map((item, index) => {
-                            if (index < count) {
+                            if (index < AnimationRender()) {
                                 return <AnimatedText key={index} text={item} />;
                             } else {
                                 return null;
@@ -109,15 +144,27 @@ function CodeWindow() {
 
                     <div className="animated-text tab" id='tab'>
                         {
-                            projectList.map((item, index) =>
+                            isActiveLine && projectList.map((item, index) =>
                                 <p
                                     key={index}
-                                    className={index === activeProject ? 'activeProject' : ''}
-                                    onClick={() => handleProjectClick(item)}
+                                    style={{ color: selectedTitle === item ? '#79C0FF' : 'white' }}
+                                    onClick={() => { setSelectedTitle(item); setIsActiveLine(true) }}
                                 >{item}</p>
                             )
                         }
                     </div>
+                    <div className="sidePopup-wrapper">
+                        <div className="sidePopup" style={{ display: isActiveLine ? 'flex' : 'none' }}>
+                            {
+                                isActiveLine && <Card data={filteredObjects} />
+                            }
+                        </div>
+                    </div>
+                    {/* <SmallModal className="mobile-popup-projects">
+                        {
+                            setIsActiveLine(false) && <Card data={filteredObjects} />
+                        }
+                    </SmallModal> */}
                 </div>
             </div>
         </div>

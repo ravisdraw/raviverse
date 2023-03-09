@@ -44,7 +44,9 @@ function AnimatedText(props) {
     }, [typedText, text]);
 
     return (
-        <p style={styling} >{typedText}</p>
+        <div className="animate-wrapper">
+            <p style={styling} >{typedText}</p>
+        </div>
     );
 }
 
