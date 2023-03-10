@@ -23,7 +23,7 @@ function AnimationRender() {
 function CodeWindow() {
 
     const [activeIndex, setActiveIndex] = useState(0);
-    const titleArray = ['Projects', 'Javascript', 'UI/UX', 'Angular', 'React', 'Python'];
+    const titleArray = ['Projects', 'Javascript', 'UI/UX', 'Certifications'];
 
     const js = {
         title: { text: 'I invite you to explore the projects I have completed' },
@@ -42,12 +42,11 @@ function CodeWindow() {
 
     function handleTitleClick(index) {
         setActiveIndex(index);
-        setSelectedTitle(projectList[0]);
-        setIsActiveLine(true);
         if (index !== 0) {
             document.getElementById('animate').style.display = 'none';
             document.getElementById('tab').style.display = 'flex';
-
+            setSelectedTitle(projectList[0]);
+            setIsActiveLine(true);
         }
         if (index === 0) {
             document.getElementById('tab').style.display = 'none';
@@ -142,27 +141,23 @@ function CodeWindow() {
 
                     <div className="animated-text tab" id='tab'>
                         {
-                            isActiveLine && projectList.map((item, index) =>
+                            projectList.map((item, index) =>
                                 <p
                                     key={index}
-                                    style={{ color: selectedTitle === item ? '#79C0FF' : 'white' }}
-                                    onClick={() => { setSelectedTitle(item); setIsActiveLine(true) }}
+                                    style={{ color: isActiveLine && selectedTitle === item ? '#79C0FF' : 'white' }}
+                                    onClick={() => { setSelectedTitle(item); setIsActiveLine(true); }}
                                 >{item}</p>
                             )
                         }
                     </div>
                     <div className="sidePopup-wrapper">
                         <div className="sidePopup" style={{ display: isActiveLine ? 'flex' : 'none' }}>
+                            <div className="resume-close mob-close" onClick={() => { setIsActiveLine(false); }}></div>
                             {
                                 isActiveLine && <Card data={filteredObjects} />
                             }
                         </div>
                     </div>
-                    {/* <SmallModal className="mobile-popup-projects">
-                        {
-                            setIsActiveLine(false) && <Card data={filteredObjects} />
-                        }
-                    </SmallModal> */}
                 </div>
             </div>
         </div>

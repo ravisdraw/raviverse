@@ -1,6 +1,6 @@
 .copilot-wrapper {
     width: 65%;
-    height: 50rem;
+    height: 100%;
     display: flex;
     justify-content: center;
     /* background-color: blue; */
@@ -157,12 +157,25 @@
     }
 }
 
+.mobile-project-card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    z-index: 10;
+}
+
+.mob-close {
+    background-color: white;
+    border-radius: 50%;
+    display: none;
+}
+
 
 @media only screen and (max-width: 767px) {
 
     .copilot-wrapper {
         width: 90%;
-        height: 70rem;
         display: flex;
         justify-content: center;
         /* background-color: blue; */
@@ -191,15 +204,20 @@
         display: none;
     }
 
-    .sidePopup-wrapper {
+    /* .sidePopup-wrapper {
         display: none;
+    } */
+
+    .sidePopup {
+        width: 100%;
+        animation: pop-up .3s ease;
     }
 
     .tab>p {
         margin: 1rem 1rem;
     }
 
-    .mobile-popup-projects {
+    .mob-close {
         display: block;
     }
 

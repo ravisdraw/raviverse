@@ -27,8 +27,6 @@
 .project-desc {
     flex: 1;
     height: 30%;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .project-desc p {
@@ -36,6 +34,7 @@
     font-weight: 500;
     color: white;
     margin: 0;
+    text-align: center;
 }
 
 .card-buttons {
@@ -43,7 +42,7 @@
     align-items: center;
     justify-content: center;
     gap: 1.3rem;
-    height: 10%;
+    height: 15%;
 }
 
 .card-buttons>button {
@@ -90,11 +89,13 @@ a {
 }
 
 @media only screen and (max-width: 767px) {
-    .mobile {
-        display: block;
+
+    .card-buttons>button {
+        padding: 0.7rem;
+        font-size: 1rem;
     }
 
-    .pc {
-        display: none;
+    .project-desc p {
+        font-size: 1rem;
     }
 }
