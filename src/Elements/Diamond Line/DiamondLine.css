@@ -5,11 +5,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .diamond-wrapper .diamond {
-    height: 8px;
+    height: 10px;
     width: 8px;
     border: 1.5px solid #444A52;
     transform: rotate(45deg);

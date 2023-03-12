@@ -3,6 +3,7 @@ import LandingNote from './Landing Note/LandingNote';
 import Navigation from './Navigation/Navigation';
 import Projects from './Projects/Projects';
 import { Element } from 'react-scroll';
+import Skills from './Skills/Skills';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Element name="Navigation"> <Navigation /> </Element>
       <LandingNote />
       <Element name="Projects"> <Projects /> </Element>
+      <Element name="Skills"> <Skills /> </Element>
     </div>
   );
 }

@@ -36,6 +36,17 @@
     border-radius: 0.5rem;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+    position: relative;
+}
+
+.project-heading-decor {
+    position: absolute;
+    right: 2rem;
+    font-size: 2.1rem;
+    color: #ffffff47;
+    top: 0.5rem;
+    font-weight: bolder;
+    animation: slide-left .5s ease-in;
 }
 
 .window-title {
@@ -219,6 +230,11 @@
 
     .mob-close {
         display: block;
+    }
+
+
+    .project-heading-decor {
+        display: none;
     }
 
 }

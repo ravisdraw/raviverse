@@ -1,7 +1,7 @@
 import React from 'react'
-import './DimondLine.css'
+import './DiamondLine.css'
 
-function DimondLine() {
+function DiamondLine() {
     return (
         <div className='diamond-wrapper'>
             <div className="line-1"></div>
@@ -11,4 +11,4 @@ function DimondLine() {
     )
 }
 
-export default DimondLine
+export default DiamondLine

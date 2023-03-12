@@ -30,7 +30,7 @@ function LandingNote() {
                 </SmallModal>
             )}
             <div className="note-container">
-                <h1 className="note-title note">Hi there! I'm Ravikumar,</h1>
+                <h1 className="note-title note">I'm Ravikumar,</h1>
                 <h3 className="note-para note">Experienced TCS software developer with innovative projects showcasing expertise in coding & project management.</h3>
                 <div className="note-buttons">
                     <div className="resume">
