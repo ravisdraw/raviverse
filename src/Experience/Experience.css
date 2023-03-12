@@ -106,10 +106,17 @@
 
     .experience-main-title {
         width: 100%;
+        text-align: center;
     }
 
     .experience-main-title h1 {
+        font-size: 1.5rem;
         margin: 0;
+    }
+
+    .experience-main-title h3 {
+        font-size: 1rem;
+        margin-top: 0.5rem;
     }
 
     .experience-contents {
@@ -125,10 +132,24 @@
     }
 
     .experience-main-content>ul>li {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+    }
+
+    .experience-sub-list {
+        padding: 0;
+    }
+
+    .experience-sub-list h1 {
+        font-size: 1.5rem;
     }
 
     .experience-sub-contents {
-        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 0;
+    }
+
+    .experience-sub-list h2 {
+        font-size: 0.7rem;
     }
 }
