@@ -1,0 +1,134 @@
+.experience-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.experience-contents {
+    width: 80%;
+    height: 50%;
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    padding-bottom: 0;
+}
+
+.experience-main-title {
+    height: 100%;
+    width: 30%;
+    padding: 1rem;
+    border-top: 1.5px solid #444A52;
+}
+
+.experience-main-content {
+    height: 100%;
+    width: 70%;
+    border-top: 1.5px solid #444A52;
+}
+
+.experience-sub-contents {
+    width: 80%;
+    height: 50%;
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.experience-sub-list {
+    flex: 1;
+    border-top: 1.5px solid #444A52;
+}
+
+.experience-main-title h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -2px;
+    color: white;
+    margin: 3rem 0rem;
+    margin-bottom: 1rem;
+}
+
+.experience-main-title h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #8B949E;
+    align-self: center;
+}
+
+.experience-main-content>ul>li {
+    font-size: 1.5rem;
+    margin: 1rem;
+    font-weight: 600;
+    color: white;
+}
+
+.gradient-list {
+    background: linear-gradient(to bottom, #93F5EC, #A77BF3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.experience-sub-list {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.experience-sub-list h1 {
+    font-size: 3rem;
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.experience-sub-list h2 {
+    margin: 0;
+    color: white;
+    font-size: 1.2rem;
+    width: 85%;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .experience-wrapper {
+        height: auto;
+    }
+
+    .experience-contents {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+
+    .experience-main-title {
+        width: 100%;
+    }
+
+    .experience-main-title h1 {
+        margin: 0;
+    }
+
+    .experience-contents {
+        gap: 0;
+    }
+
+    .experience-main-content {
+        width: 100%;
+    }
+
+    .gradient-list {
+        padding: 0;
+    }
+
+    .experience-main-content>ul>li {
+        font-size: 1.3rem;
+    }
+
+    .experience-sub-contents {
+        flex-direction: column;
+    }
+}

@@ -11,7 +11,7 @@ function Navigation() {
         display: showSidebar ? 'grid' : 'none',
     };
 
-    const navItems = ['Projects', 'Skills', 'Experiance', 'Hire Me', 'Profile'];
+    const navItems = ['Projects', 'Skills', 'Experience', 'Hire Me', 'Profile'];
     const navMobItems = ['Hire Me', 'About Me']
 
     const [isVisible, setIsVisible] = useState(false);
