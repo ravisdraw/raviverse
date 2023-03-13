@@ -91,9 +91,9 @@
     transition: border-width 0.2s;
 }
 
-.note-buttons>.resume>button:hover {
+/* .note-buttons>.resume>button:hover {
     background-color: #ffffffd4;
-}
+} */
 
 .resume-modal {
     background-color: white;
