@@ -1,0 +1,99 @@
+.hireMe-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.hireMe-title {
+    width: 80%;
+    height: 20%;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    border-top: 1.5px solid #444A52;
+}
+
+.hireMe-title h1,
+.hireMe-title h3 {
+    margin: 0;
+}
+
+.hireMe-title h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -2px;
+    color: white;
+    margin: 3rem 0rem;
+    margin-bottom: 1rem;
+}
+
+.hireMe-title h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #8B949E;
+    align-self: center;
+    width: 70%;
+}
+
+.hireMe-contents {
+    width: 80%;
+    height: 80%;
+    display: flex;
+}
+
+.hireMe-left-container {
+    flex: 1;
+    padding: 3rem;
+    padding-right: 0;
+}
+
+.hireMe-right-container {
+    flex: 1;
+    padding: 3rem;
+    padding-left: 0;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .hireMe-wrapper {
+        height: auto;
+    }
+
+    .hireMe-title {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hireMe-title h1 {
+        font-size: 1.5rem;
+        margin: 0;
+        width: 80%;
+        margin-top: 2rem;
+    }
+
+    .hireMe-title h3 {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+        width: 80%;
+    }
+
+    .hireMe-contents {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .hireMe-left-container {
+        padding: 0;
+    }
+
+    .hireMe-right-container {
+        padding: 0;
+    }
+
+
+}

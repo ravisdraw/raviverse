@@ -1,0 +1,98 @@
+.contactMe-wrapper {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    font-family: 'Poppins';
+}
+
+.contactMe-card {
+    width: 80%;
+    height: 90%;
+    background-color: #24292F;
+    border: 1px solid #3e3e3e;
+    border-radius: 0.3rem;
+}
+
+.contactMe-card:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
+.contactMe-card h1 {
+    font-size: 3rem;
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 1rem 3rem;
+    padding-bottom: 0;
+}
+
+.contactMe-card h2 {
+    margin: 0;
+    color: white;
+    font-size: 1.2rem;
+    padding: 0rem 3rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.contactMe-btns {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    margin-top: 3rem;
+    justify-content: center;
+}
+
+.contactMe-card button {
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    background-color: white;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    width: 40%;
+    text-decoration: none;
+    color: black;
+}
+
+.contactMe-btns .call-btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+@media only screen and (max-width: 767px) {
+    .contactMe-card {
+        width: 100%;
+        height: 100%;
+    }
+
+    .contactMe-card h1 {
+        font-size: 2rem;
+        padding: 1rem 1rem;
+        padding-bottom: 0;
+    }
+
+    .contactMe-card h2 {
+        font-size: 1rem;
+        padding: 0rem 1rem;
+        font-weight: 400;
+    }
+
+    .contactMe-card button {
+        margin: 0.5rem 2rem;
+        font-size: 1.2rem;
+    }
+
+    .contactMe-btns {
+        margin-top: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .contactMe-btns button {
+        width: auto;
+    }
+}
