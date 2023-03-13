@@ -5,7 +5,7 @@ import Projects from './Projects/Projects';
 import { Element } from 'react-scroll';
 import Skills from './Skills/Skills';
 import Experience from './Experience/Experience'
-import HireMe from './Hire Me/HireMe';
+import HireMe from './Hire Me/HireMe'
 
 function App() {
   return (

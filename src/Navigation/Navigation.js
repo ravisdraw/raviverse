@@ -11,8 +11,7 @@ function Navigation() {
         display: showSidebar ? 'grid' : 'none',
     };
 
-    const navItems = ['Projects', 'Skills', 'Experience', 'Hire Me', 'Profile'];
-    const navMobItems = ['Hire Me', 'About Me']
+    const navItems = ['Projects', 'Skills', 'Experience', 'Hire Me'];
 
     const [isVisible, setIsVisible] = useState(false);
 
@@ -61,12 +60,9 @@ function Navigation() {
             </div>
             <div className="ham-menu" style={hamStyle}>
                 <div className="ham-menu-container">
-                    {navMobItems.map((item, index) =>
-                        <Link to={item} smooth={true} key={index}>
-                            <div className="ham-items" >{item}</div>
-                        </Link>
-                    )
-                    }
+                    <Link to={'Hire Me'} smooth={true}>
+                        <div className="ham-items" >Hire Me</div>
+                    </Link>
                 </div>
             </div>
 

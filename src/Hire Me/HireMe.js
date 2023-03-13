@@ -31,7 +31,7 @@ function HireMe() {
                         </div>
                         <div className="contactMe-btns">
                             <button>Whatsapp Me</button>
-                            <button class="call-btn">Call Me</button>
+                            <button className="call-btn">Call Me</button>
                         </div>
                     </div>
                 </div>

@@ -10,7 +10,7 @@ function Experience() {
                     <h3>Over the course of my 2.5 years at TCS, I had the opportunity to grow both personally and professionally, acquiring the tools and skills necessary to tackle any challenge with confidence and ease</h3>
                 </div>
                 <div className="experience-main-content">
-                    <ul class="gradient-list">
+                    <ul className="gradient-list">
                         <li>Possess strong analytical skills, excellent communication, and organizational skills, and can work both independently and collaboratively as part of a team.</li>
                         <li>Proficient in Angular with 2.5 years of experience in analysis, UI/UX design, testing, documentation, and development of applications.</li>
                         <li>Skilled in team collaboration, which enables effective group work and leadership.</li>
