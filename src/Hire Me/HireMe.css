@@ -143,6 +143,11 @@
     border: 1.5px solid #444A52;
 }
 
+.phonecall .whatsapp-me {
+    background-color: #1AD03F;
+    color: white;
+}
+
 @media only screen and (max-width: 767px) {
     .hireMe-wrapper {
         height: auto;

@@ -68,7 +68,7 @@ function HireMe() {
                             <h2>Email ID : ravikumarrajasekaran11@gmail.com</h2>
                         </div>
                         <div className="hireMe-btn phonecall">
-                            <button>Whatsapp Me</button>
+                            <button className='whatsapp-me'>Whatsapp Me</button>
                             <button className="call-btn">Call Me</button>
                         </div>
                     </div>
