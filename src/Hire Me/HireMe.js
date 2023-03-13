@@ -1,17 +1,9 @@
 import React from 'react'
 import './HireMe.css'
 
-function generateWhatsAppLink(phoneNumber) {
-    const baseUrl = "https://wa.me/";
-    const encodedPhoneNumber = encodeURIComponent(phoneNumber);
-    return `${baseUrl}${encodedPhoneNumber}`;
-}
-
 function HireMe() {
 
-    const phoneNumber = "8056251542"; // replace with your phone number
-
-    const whatsappLink = generateWhatsAppLink(phoneNumber);
+    const whatsappLink = 'https://wa.link/76u37v'
 
     return (
         <div className="hireMe-wrapper">
