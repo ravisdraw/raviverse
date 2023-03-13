@@ -10,7 +10,7 @@
 
 .hireMe-title {
     width: 80%;
-    height: 20%;
+    height: 30%;
     text-align: center;
     display: grid;
     place-items: center;
@@ -41,20 +41,125 @@
 
 .hireMe-contents {
     width: 80%;
-    height: 80%;
+    height: 70%;
     display: flex;
 }
 
-.hireMe-left-container {
-    flex: 1;
-    padding: 3rem;
-    padding-right: 0;
+.hireMe-left-container,
+.hireMe-right-container {
+    width: 50%;
+    height: 100%;
+    display: grid;
+    place-items: center;
 }
 
-.hireMe-right-container {
-    flex: 1;
-    padding: 3rem;
-    padding-left: 0;
+.hireMe-card {
+    width: 80%;
+    height: 90%;
+    background-color: #24292F;
+    border: 1px solid #3e3e3e;
+    border-radius: 0.3rem;
+}
+
+.hireMe-card:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
+.hireMe-card h1 {
+    font-size: 3rem;
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 1rem 3rem;
+    padding-bottom: 0;
+    height: 10%;
+}
+
+.hireMe-card h2 {
+    margin: 0;
+    color: white;
+    font-size: 1.3rem;
+    padding: 0rem 3rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.hireMe-card button {
+    padding: 1rem;
+    width: 80%;
+    margin: 3rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    background-color: white;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.contactMe-card {
+    width: 80%;
+    height: 90%;
+    background-color: #24292F;
+    border: 1px solid #3e3e3e;
+    border-radius: 0.3rem;
+}
+
+.contactMe-card:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
+.contactMe-card h1 {
+    font-size: 3rem;
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 1rem 3rem;
+    padding-bottom: 0;
+    height: 10%;
+}
+
+.contactMe-list {
+    height: 60%;
+}
+
+.hireMe-list {
+    height: 60%;
+}
+
+.contactMe-card h2 {
+    margin: 0;
+    color: white;
+    font-size: 1.3rem;
+    padding: 0rem 3rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.contactMe-btns {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.contactMe-btns button {
+    font-size: 1.4rem;
+    font-weight: 500;
+    background-color: white;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    width: 40%;
+    text-decoration: none;
+    color: black;
+    margin: 3rem 2rem;
+}
+
+.contactMe-btns .call-btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
 }
 
 @media only screen and (max-width: 767px) {
@@ -65,7 +170,7 @@
 
     .hireMe-title {
         width: 100%;
-        height: 40%;
+        height: 20rem;
         text-align: center;
     }
 
@@ -83,17 +188,63 @@
     }
 
     .hireMe-contents {
+        width: 100%;
+        height: 60rem;
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 1rem;
     }
 
     .hireMe-left-container {
-        padding: 0;
+        width: 100%;
+        height: 50%;
     }
 
     .hireMe-right-container {
-        padding: 0;
+        width: 100%;
+        height: 50%;
+    }
+
+    .hireMe-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        height: 100%;
+        width: 90%;
+    }
+
+    .hireMe-card h1 {
+        font-size: 1.5rem;
+        padding: 0.5rem 1.1rem;
+        height: 1rem;
+        align-self: flex-start;
+    }
+
+    .hireMe-card h2 {
+        font-size: 1rem;
+        padding: 0rem 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .contactMe-list {
+        height: 65%;
+    }
+
+    .contactMe-btns {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 3rem;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .contactMe-btns>button {
+        margin: 0;
     }
 
 

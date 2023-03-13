@@ -1,6 +1,4 @@
 import React from 'react'
-import ContactMe from '../Elements/Contact Me/ContactMe'
-import HireMeModal from '../Elements/HireMe Modal/HireMeModal'
 import './HireMe.css'
 
 function HireMe() {
@@ -12,10 +10,30 @@ function HireMe() {
             </div>
             <div className="hireMe-contents">
                 <div className="hireMe-left-container">
-                    <HireMeModal />
+                    <div className="hireMe-card">
+                        <h1>”</h1>
+                        <div className="hireMe-list">
+                            <h2>I'm confident that I have the qualifications and experience needed to excel in this position, and I'm eager to hit the ground running and start making a meaningful impact on your team.</h2>
+                            <h2>If you're interested in hiring me, simply click the button below and you'll be redirected to an email where you can send me an offer.</h2>
+                        </div>
+                        <button>Hire Me</button>
+                    </div>
                 </div>
                 <div className="hireMe-right-container">
-                    <ContactMe />
+                    <div className="hireMe-card">
+                        <h1>”</h1>
+                        <div className="hireMe-list">
+                            <h2>Let's Chat</h2>
+                            <h2>Want to schedule an interview or have questions? I'm just a call or message away.</h2>
+                            <h2>Name : Ravikumar</h2>
+                            <h2>Mobile No : +91 8056251542</h2>
+                            <h2>Email ID : ravikumarrajasekaran11@gmail.com</h2>
+                        </div>
+                        <div className="contactMe-btns">
+                            <button>Whatsapp Me</button>
+                            <button class="call-btn">Call Me</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

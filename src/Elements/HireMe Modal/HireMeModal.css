@@ -45,6 +45,8 @@
     border: none;
     border-radius: 0.3rem;
     cursor: pointer;
+    text-decoration: none;
+    color: black;
 }
 
 @media only screen and (max-width: 767px) {
