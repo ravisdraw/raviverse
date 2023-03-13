@@ -23,11 +23,10 @@ function HireMe() {
 
     const sendEmail = (e) => {
         e.preventDefault();
-
+        setShowModal(false);
         emailjs.sendForm('service_ew5t0nq', 'template_jxtp359', form.current, 'XFvcPdVbuI6fentbl')
             .then((result) => {
                 console.log(result.status);
-                setShowModal(false);
                 if (result.status === 200) {
                     setSent(true);
                     setName('');
