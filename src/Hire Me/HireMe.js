@@ -37,7 +37,7 @@ function HireMe() {
                         </div>
                         <div className="hireMe-btn phonecall">
                             <button className='whatsapp-me'><a href={whatsappLink} target="_blank" rel="noopener noreferrer">Whatsapp Me</a></button>
-                            <button className="call-btn">Call Me</button>
+                            <button className="call-btn"><a href="tel:+918056251542">Call Me</a></button>
                         </div>
                     </div>
                 </div>
