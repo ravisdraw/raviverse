@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './LandingNote.css'
 import { Link } from 'react-scroll';
 import SmallModal from '../Elements/Small Modal/SmallModal';
+import ClearIcon from '@mui/icons-material/Clear';
 
 function LandingNote() {
 
@@ -20,7 +21,9 @@ function LandingNote() {
             {showModal && (
                 <SmallModal>
                     <div className="resume-modal">
-                        <div className="resume-close" onClick={toggleModal}></div>
+                        <div className="resume-close" onClick={toggleModal}>
+                            <ClearIcon fontSize='medium' sx={{ color: 'black' }} />
+                        </div>
                         <div className="resume-prompt">"Want to know more? Get my resume with just a click - download or view it now!"</div>
                         <div className="resume-btns">
                             <button className="download"><a href={downloadPDF} >Download</a></button>

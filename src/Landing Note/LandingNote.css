@@ -158,7 +158,7 @@ a {
     top: 0.6rem;
     height: 2rem;
     width: 2rem;
-    background: url("../Assets/close-circle.svg");
+    /* background: url("../Assets/close-circle.svg"); */
     cursor: pointer;
 }
 

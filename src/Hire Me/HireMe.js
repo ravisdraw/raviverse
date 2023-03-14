@@ -2,6 +2,10 @@ import React, { useState, useRef } from 'react';
 import './HireMe.css'
 import SmallModal from '../Elements/Small Modal/SmallModal';
 import emailjs from '@emailjs/browser';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import CallIcon from '@mui/icons-material/CallOutlined';
+import ClearIcon from '@mui/icons-material/Clear';
 
 function HireMe() {
 
@@ -32,7 +36,6 @@ function HireMe() {
                     setName('');
                     setEmail('');
                     setMessage('');
-                    console.log("Email Sent Successfully");
                     setInterval(() => {
                         setSent(false);
                     }, 3000);
@@ -56,7 +59,9 @@ function HireMe() {
                 showModal && (
                     <SmallModal>
                         <form ref={form} onSubmit={sendEmail} className="form-wrapper">
-                            <div className="resume-close" onClick={toggleModal}></div>
+                            <div className="resume-close" onClick={toggleModal}>
+                                <ClearIcon fontSize='medium' sx={{ color: 'black' }} />
+                            </div>
                             <label htmlFor="name">Name:</label>
                             <input
                                 type="text"
@@ -123,7 +128,7 @@ function HireMe() {
                             <h2>If you're interested in hiring me, simply click the button below and you'll be redirected to an email where you can send me an offer.</h2>
                         </div>
                         <div className="hireMe-btn">
-                            <button onClick={toggleModal}>Hire Me</button>
+                            <button onClick={toggleModal}><MailOutlineIcon fontSize='medium' sx={{ color: 'black' }} />Hire Me</button>
                         </div>
                     </div>
                 </div>
@@ -138,8 +143,8 @@ function HireMe() {
                             <h2>Email ID : ravikumarrajasekaran11@gmail.com</h2>
                         </div>
                         <div className="hireMe-btn phonecall">
-                            <button className='whatsapp-me'><a href={whatsappLink}>Whatsapp Me</a></button>
-                            <button className="call-btn"><a href="tel:+918056251542">Call Me</a></button>
+                            <button className='whatsapp-me'><a href={whatsappLink}> <WhatsAppIcon fontSize='medium' sx={{ color: 'white' }} /> Whatsapp Me</a></button>
+                            <button className="call-btn"><a href="tel:+918056251542"> <CallIcon fontSize='medium' sx={{ color: 'white' }} /> Call Me</a></button>
                         </div>
                     </div>
                 </div>
