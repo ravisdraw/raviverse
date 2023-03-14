@@ -88,7 +88,7 @@ function VScode() {
                             setProjectClicked(true);
                             setInterval(() => {
                                 setProjectClicked(false);
-                            }, 500);
+                            }, 1000);
                         }}>New Year Countdown</h3>
                         <h3>Analog Clock</h3>
                         <h3>Digital Clock</h3>
