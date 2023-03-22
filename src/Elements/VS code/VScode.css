@@ -61,7 +61,7 @@
     background-color: rgba(255, 255, 255, 0.322);
 }
 
-.main-icons .menu-icons:first-child {
+.active-Menu-item {
     border-left: 5px solid white;
 }
 
@@ -100,9 +100,25 @@
     /* background-color: aquamarine; */
     display: flex;
     flex-direction: column;
+    overflow: scroll;
+    overflow-x: hidden;
+    margin-bottom: 2rem;
 }
 
-.vscode-menu-subtitle h3:first-child {
+.vscode-menu-subtitle::-webkit-scrollbar {
+    width: 5px;
+}
+
+.vscode-menu-subtitle::-webkit-scrollbar-track {
+    background-color: #252526;
+}
+
+.vscode-menu-subtitle::-webkit-scrollbar-thumb {
+    background-color: #333333;
+    border-radius: 8px;
+}
+
+.active-Subtitle {
     background-color: #007ACC;
 }
 
@@ -121,7 +137,7 @@
 
 .vscode-menu-subtitle h3:hover {
     cursor: pointer;
-    background-color: #007ACC;
+    /* background-color: #007ACC; */
 }
 
 .vscode-content {
@@ -175,33 +191,35 @@
 
 .project-description {
     width: 100%;
-    height: 50%;
+    height: 55%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    overflow: scroll;
-    overflow-x: hidden;
 }
 
-.project-description::-webkit-scrollbar {
+
+.project-desc-title {
+    width: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    /* background-color: yellow; */
+}
+
+
+.project-desc-title::-webkit-scrollbar {
     width: 5px;
 }
 
-.project-description::-webkit-scrollbar-track {
+.project-desc-title::-webkit-scrollbar-track {
     background-color: #1E1E1E;
 }
 
-.project-description::-webkit-scrollbar-thumb {
+.project-desc-title::-webkit-scrollbar-thumb {
     background-color: #252526;
     border-radius: 8px;
 }
 
-.project-desc-title {
-    width: 100%;
-    /* background-color: yellow; */
-}
-
-.project-desc-title h5 {
+.project-description h5 {
     margin: 0;
     font-size: 1.2rem;
     /* background-color: #3C3C3C; */
@@ -210,14 +228,15 @@
     color: white;
 }
 
+
 .project-desc-title p {
     font-size: 1rem;
     margin: 0;
     color: white;
     background-color: #3C3C3C;
-    padding: 1rem;
-    border-radius: 0.2rem;
-    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    /* border-radius: 0.2rem; */
+    /* margin-top: 1rem; */
 }
 
 .project-btns {
@@ -252,6 +271,50 @@
 
 .vscode-mobile {
     display: none;
+}
+
+.design-img-wrapper {
+    height: 30rem;
+    width: 22rem;
+    background-color: white;
+    padding: 1rem;
+    position: relative;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding-top: 4.5rem;
+    display: grid;
+    place-items: center;
+}
+
+
+
+.coffeeCupLoader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.design-img-wrapper::-webkit-scrollbar {
+    width: 5px;
+}
+
+.design-img-wrapper::-webkit-scrollbar-track {
+    background-color: #1E1E1E;
+}
+
+.design-img-wrapper::-webkit-scrollbar-thumb {
+    background-color: #252526;
+    border-radius: 8px;
+}
+
+.design-img-wrapper img {
+    width: 100%;
+    object-fit: fill;
+    border-radius: 0.5rem;
+}
+
+.design-img {
+    position: absolute;
 }
 
 @media only screen and (max-width: 767px) {
@@ -325,6 +388,23 @@
         gap: 0.5rem;
         padding: 1rem 1rem;
         border-bottom: 1px solid rgb(62, 62, 62);
+    }
+
+    .mobile-project-container {
+        background-color: white;
+        height: 30rem;
+        width: 20rem;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        position: relative;
+    }
+
+    .vscode-main-projectName>h3 {
+        font-size: 1.5rem;
+        color: black;
+        font-weight: 600;
+        margin: 0;
+        padding: 1.2rem 0;
     }
 
 

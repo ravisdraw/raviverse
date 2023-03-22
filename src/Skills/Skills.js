@@ -64,7 +64,7 @@ function Skills() {
 
                 <div className="skills-content-list">
                     <div className="skills-titles">
-                        <h1>Backend Technologies</h1>
+                        <h1>Backend & Testing</h1>
                     </div>
                     <div className="diamond-separator">
                         <DiamondLine />
