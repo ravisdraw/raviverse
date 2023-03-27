@@ -17,13 +17,13 @@ import { useEffect } from 'react';
 
 function VScode() {
 
-    const [testjavascriptProjects, setJavascriptProjects] = useState(null);
-    const [testcertificateData, setCertificateData] = useState(null);
+    const [testjavascriptProjects, setJavascriptProjects] = useState(javascriptProjects);
+    // const [testcertificateData, setCertificateData] = useState(null);
     const [testuiDesigns, setUiDesigns] = useState(null);
-    console.log(javascriptProjects);
+    // console.log(javascriptProjects);
 
     useEffect(() => {
-        const fetchData = async () => {
+        const jsData = async () => {
             const { data, error } = await supabase
                 .from('JavaScript')
                 .select();
@@ -37,8 +37,25 @@ function VScode() {
             }
         }
 
-        fetchData()
+        const uiData = async () => {
+            const { data, error } = await supabase
+                .from('UIdesigns')
+                .select();
+            if (error) {
+                setUiDesigns(null)
+                console.log(error);
+            }
+
+            if (data) {
+                console.log(data);
+                setUiDesigns(data);
+            }
+        }
+
+        jsData();
+        uiData();
     }, [])
+
     // console.log(javascriptProjects);
 
     const [projectClicked, setProjectClicked] = useState(false);
@@ -74,7 +91,7 @@ function VScode() {
             SubTitle = 'Project Description'
             break;
         case 'UI/UX Designs':
-            vscodeData = uiDesigns;
+            vscodeData = testuiDesigns;
             descData = vscodeData.map(item => item.desc)
             labels = ['Adobe Illustrator', 'Figma'];
             title = vscodeData.map(item => item.title)
