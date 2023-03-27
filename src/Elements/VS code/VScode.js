@@ -11,11 +11,34 @@ import CoffeeCup from '../CoffeeCup/CoffeeCup'
 import javascriptProjects from '../../Local Data/javascriptData'
 import uiDesigns from '../../Local Data/uiDesignsData';
 import certificateData from '../../Local Data/certificateData';
+import supabase from '../../config/supabase';
+import { useEffect } from 'react';
 
 
 function VScode() {
 
+    const [testjavascriptProjects, setJavascriptProjects] = useState(null);
+    const [testcertificateData, setCertificateData] = useState(null);
+    const [testuiDesigns, setUiDesigns] = useState(null);
+    console.log(javascriptProjects);
 
+    useEffect(() => {
+        const fetchData = async () => {
+            const { data, error } = await supabase
+                .from('JavaScript')
+                .select();
+            if (error) {
+                setJavascriptProjects(null)
+                console.log(error);
+            }
+
+            if (data) {
+                setJavascriptProjects(data);
+            }
+        }
+
+        fetchData()
+    }, [])
     // console.log(javascriptProjects);
 
     const [projectClicked, setProjectClicked] = useState(false);
@@ -36,7 +59,7 @@ function VScode() {
         setActiveMenu(menu);
     };
 
-    let vscodeData = javascriptProjects;
+    let vscodeData = testjavascriptProjects;
     let labels = ['HTML', 'CSS', 'JavaScript'];
     let SubTitle = 'Project Description'
     let descData = []
@@ -44,7 +67,7 @@ function VScode() {
 
     switch (activeMenu) {
         case 'javaScript':
-            vscodeData = javascriptProjects;
+            vscodeData = testjavascriptProjects;
             descData = vscodeData.map(item => item.desc)
             labels = ['HTML', 'CSS', 'JavaScript'];
             title = vscodeData.map(item => item.title)

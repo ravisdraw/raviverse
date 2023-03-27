@@ -7,6 +7,7 @@ import Skills from './Skills/Skills';
 import Experience from './Experience/Experience'
 import HireMe from './Hire Me/HireMe'
 
+
 function App() {
   return (
     <div className="main-wrapper">
