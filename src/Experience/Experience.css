@@ -71,6 +71,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
+    margin: 0;
 }
 
 .experience-sub-list {

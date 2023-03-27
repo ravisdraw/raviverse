@@ -17,6 +17,12 @@ body {
   }
 }
 
+@media only screen and (max-width: 1024px) {
+  body {
+    font-size: 30px;
+  }
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
