@@ -35,6 +35,7 @@ function LandingNote() {
             <div className="note-container">
                 <h1 className="note-title note">I'm Ravikumar,</h1>
                 <h3 className="note-para note">Experienced TCS software developer with innovative projects showcasing expertise in coding & project management.</h3>
+                <h3 className="note-para note">I invite you to explore my projects, and I hope you find inspiration for your own work.</h3>
                 <div className="note-buttons">
                     <div className="resume">
                         <button onClick={toggleModal} >Inspect My Resume</button>

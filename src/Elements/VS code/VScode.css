@@ -317,6 +317,10 @@
     position: absolute;
 }
 
+.mobile-popup {
+    display: none;
+}
+
 @media only screen and (max-width: 767px) {
     .vscode-window {
         display: none;
@@ -392,7 +396,7 @@
 
     .mobile-project-container {
         background-color: white;
-        height: 30rem;
+        height: 18rem;
         width: 20rem;
         border-radius: 0.5rem;
         padding: 1rem;
@@ -407,5 +411,37 @@
         padding: 1.2rem 0;
     }
 
+    .mob-icon {
+        flex: 1;
+        display: grid;
+        place-items: center;
+        height: 100%;
+    }
+
+    .active-icon {
+        background-color: #007ACC;
+    }
+
+    .mobile-tags {
+        flex-wrap: wrap;
+    }
+
+    .mob-buttons {
+        padding: 1rem 1rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .project-btns>button {
+        width: 100%;
+        margin: 0;
+    }
+
+    .mobile-popup {
+        display: block;
+        position: absolute;
+    }
 
 }

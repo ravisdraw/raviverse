@@ -3,7 +3,7 @@ import './VScode.css'
 import DescriptionIcon from '@mui/icons-material/DescriptionOutlined';
 import BrushIcon from '@mui/icons-material/BrushOutlined';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
-import AccountCircleIcon from '@mui/icons-material/AccountCircleOutlined';
+// import AccountCircleIcon from '@mui/icons-material/AccountCircleOutlined';
 import NoteIcon from '@mui/icons-material/NoteOutlined';
 import ClearIcon from '@mui/icons-material/Clear';
 import SmallModal from '../Small Modal/SmallModal';
@@ -199,7 +199,7 @@ function VScode() {
                 <SmallModal>
                     <div className="design-img-wrapper">
                         {isLoaded ? null : <CoffeeCup className="coffeeCupLoader" />}
-                        <div className="resume-close design-img" onClick={() => setSmallModel(false)}>
+                        <div className="resume-close design-img" onClick={() => { setSmallModel(false); setProjectClicked(true) }}>
                             <ClearIcon fontSize='medium' sx={{ color: 'black' }} />
                         </div>
                         <img
@@ -227,40 +227,64 @@ function VScode() {
 
                 </div>
                 <div className="vscode-mobile-menu">
-                    <DescriptionIcon fontSize='medium' sx={{ color: 'white' }} />
-                    <BrushIcon fontSize='medium' sx={{ color: 'white' }} />
-                    <WorkspacePremiumIcon fontSize='medium' sx={{ color: 'white' }} />
-                    <AccountCircleIcon fontSize='medium' sx={{ color: 'white' }} className='Menu-icons' />
+                    <div className={`mob-icon ${activeMenu === 'javaScript' ? 'active-icon' : ''}`} onClick={() => handleMenuClick('javaScript')}>
+                        <DescriptionIcon fontSize='large' sx={{ color: 'white' }} />
+                    </div>
+                    <div className={`mob-icon ${activeMenu === 'UI/UX Designs' ? 'active-icon' : ''}`} onClick={() => handleMenuClick('UI/UX Designs')}>
+                        <BrushIcon fontSize='large' sx={{ color: 'white' }} />
+                    </div>
+                    <div className={`mob-icon ${activeMenu === 'certifications' ? 'active-icon' : ''}`} onClick={() => handleMenuClick('certifications')}>
+                        <WorkspacePremiumIcon fontSize='large' sx={{ color: 'white' }} />
+                    </div>
+                    {/* <AccountCircleIcon fontSize='medium' sx={{ color: 'white' }} className='Menu-icons' /> */}
                 </div>
             </div>
 
+
             {
                 projectClicked && (
-                    <SmallModal>
-                        <div className="mobile-project-container">
-                            <div className="resume-close design-img" onClick={() => setProjectClicked(false)}>
-                                <ClearIcon fontSize='medium' sx={{ color: 'black' }} />
-                            </div>
-                            <div className="vscode-main-projectName project-mob-title">
-                                <h3>{vscodeData[clickedIndex].title}</h3>
-                                <div className="project-tags">
-                                    {
-                                        labels.map((value, index) =>
-                                            <h5 key={index}>{value}</h5>
-                                        )
-                                    }
+                    <div className="mobile-popup">
+                        <SmallModal>
+                            <div className="mobile-project-container">
+                                <div className="resume-close design-img" onClick={() => setProjectClicked(false)}>
+                                    <ClearIcon fontSize='medium' sx={{ color: 'black' }} />
+                                </div>
+                                <div className="vscode-main-projectName project-mob-title">
+                                    <h3>{vscodeData[clickedIndex].title}</h3>
+                                    <div className="project-tags mobile-tags">
+                                        {
+                                            labels.map((value, index) =>
+                                                <h5 key={index}>{value}</h5>
+                                            )
+                                        }
+                                    </div>
+                                    <div className="mob-buttons">
+                                        {activeMenu === 'javaScript' &&
+                                            <div className="project-btns">
+                                                <button onClick={viewURL}>View Project</button>
+                                                <button onClick={sourceURL}>Source Code</button>
+                                            </div>
+                                        }
+                                        {activeMenu === 'UI/UX Designs' &&
+                                            <div className="project-btns">
+                                                <button onClick={() => { setSmallModel(true); UiDesignImg('outline'); setProjectClicked(false) }}>Outline </button>
+                                                <button onClick={() => { setSmallModel(true); UiDesignImg('design'); setProjectClicked(false) }}>Design </button>
+                                                <button onClick={() => { setSmallModel(true); UiDesignImg('mockup'); setProjectClicked(false) }}>Mockup </button>
+                                            </div>
+                                        }
+                                        {activeMenu === 'certifications' &&
+                                            <div className="project-btns">
+                                                <button onClick={() => { setSmallModel(true); UiDesignImg('certificate'); setProjectClicked(false) }}>View Certificate</button>
+                                            </div>
+                                        }
+                                    </div>
                                 </div>
                             </div>
-                            <div className="project-description">
-                                <div className="project-desc-title project-mob-title">
-                                    <h3>Project Description</h3>
-                                    <p>{vscodeData[clickedIndex].desc}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </SmallModal>
+                        </SmallModal>
+                    </div>
                 )
             }
+
 
         </div >
     )
