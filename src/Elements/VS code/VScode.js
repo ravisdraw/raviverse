@@ -32,6 +32,7 @@ function VScode() {
     const [activeMenu, setActiveMenu] = useState('javaScript');
 
     const handleMenuClick = (menu) => {
+        setClickedIndex(0)
         setActiveMenu(menu);
     };
 
@@ -39,24 +40,28 @@ function VScode() {
     let labels = ['HTML', 'CSS', 'JavaScript'];
     let SubTitle = 'Project Description'
     let descData = []
+    let title = []
 
     switch (activeMenu) {
         case 'javaScript':
             vscodeData = javascriptProjects;
             descData = vscodeData.map(item => item.desc)
             labels = ['HTML', 'CSS', 'JavaScript'];
+            title = vscodeData.map(item => item.title)
             SubTitle = 'Project Description'
             break;
         case 'UI/UX Designs':
             vscodeData = uiDesigns;
             descData = vscodeData.map(item => item.desc)
             labels = ['Adobe Illustrator', 'Figma'];
+            title = vscodeData.map(item => item.title)
             SubTitle = 'Design Details'
             break;
         case 'certifications':
             vscodeData = certificateData;
             descData = vscodeData.map(item => item.desc)
             labels = ['Python', 'JavaScript', 'React', 'Problem Solving'];
+            title = vscodeData.map(item => item.title)
             SubTitle = 'Covered Topics'
             break;
 
@@ -122,13 +127,13 @@ function VScode() {
                         >
                             <WorkspacePremiumIcon fontSize='large' sx={{ color: 'white' }} />
                         </div>
-                        <div
+                        {/* <div
                             className={`profile-icons ${activeMenu === 'profile' ? 'active-Menu-item' : ''}`}
                             title='Profile'
                             onClick={() => handleMenuClick('profile')}
                         >
                             <AccountCircleIcon fontSize='large' sx={{ color: 'white' }} />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 
@@ -144,10 +149,10 @@ function VScode() {
                 </div>
 
                 <div className="vscode-content">
-                    <div className="vscode-menu-title"><h1>{vscodeData[clickedIndex].title}</h1></div>
+                    <div className="vscode-menu-title"><h1>{title[clickedIndex]}</h1></div>
                     <div className="vscode-main-content">
                         <div className="vscode-main-projectName">
-                            <h2>{vscodeData[clickedIndex].title}</h2>
+                            <h2>{title[clickedIndex]}</h2>
                             <div className="project-tags">
                                 {
                                     labels.map((value, index) =>
