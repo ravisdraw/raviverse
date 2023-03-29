@@ -9,7 +9,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 import SmallModal from '../Small Modal/SmallModal';
 import CoffeeCup from '../CoffeeCup/CoffeeCup'
 import javascriptProjects from '../../Local Data/javascriptData'
-import uiDesigns from '../../Local Data/uiDesignsData';
+// import uiDesigns from '../../Local Data/uiDesignsData';
 import certificateData from '../../Local Data/certificateData';
 import supabase from '../../config/supabase';
 import { useEffect } from 'react';
@@ -33,6 +33,7 @@ function VScode() {
             }
 
             if (data) {
+                console.log(data);
                 setJavascriptProjects(data);
             }
         }
@@ -47,7 +48,6 @@ function VScode() {
             }
 
             if (data) {
-                console.log(data);
                 setUiDesigns(data);
             }
         }
@@ -121,13 +121,13 @@ function VScode() {
     const UiDesignImg = (key) => {
         switch (key) {
             case 'outline':
-                setUiDesignImg(uiDesigns[clickedIndex].outline)
+                setUiDesignImg(vscodeData[clickedIndex].outline)
                 break;
             case 'design':
-                setUiDesignImg(uiDesigns[clickedIndex].design)
+                setUiDesignImg(vscodeData[clickedIndex].design)
                 break;
             case 'mockup':
-                setUiDesignImg(uiDesigns[clickedIndex].mockup)
+                setUiDesignImg(vscodeData[clickedIndex].mockup)
                 break;
             case 'certificate':
                 setUiDesignImg(certificateData[clickedIndex].img)
@@ -239,7 +239,7 @@ function VScode() {
                 <SmallModal>
                     <div className="design-img-wrapper">
                         {isLoaded ? null : <CoffeeCup className="coffeeCupLoader" />}
-                        <div className="resume-close design-img" onClick={() => { setSmallModel(false); setProjectClicked(true) }}>
+                        <div className="resume-close design-img" onClick={() => { setSmallModel(false) }}>
                             <ClearIcon fontSize='medium' sx={{ color: 'black' }} />
                         </div>
                         <img
