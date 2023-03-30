@@ -13,7 +13,7 @@ function LandingNote() {
     }
 
     const downloadPDF = 'https://drive.google.com/u/0/uc?id=1adahk5MZtYTSN3CUz6LYg3eJ82b1k_zw&export=download';
-    const viewPDF = 'https://drive.google.com/file/d/1adahk5MZtYTSN3CUz6LYg3eJ82b1k_zw/view?usp=sharing'
+    const viewPDF = 'https://www.canva.com/design/DAFeWyQGb1k/y3CpkF-MSFuAzgVQzUTS7w/view?utm_content=DAFeWyQGb1k&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink'
 
 
     return (
