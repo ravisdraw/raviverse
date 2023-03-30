@@ -12,8 +12,8 @@ function LandingNote() {
         setShowModal(!showModal);
     }
 
-    const downloadPDF = 'https://drive.google.com/u/0/uc?id=1Y6zE8c_SkxRRd8k9bKEmfaZuWiVxjOI0&export=download';
-    const viewPDF = 'https://drive.google.com/file/d/1Y6zE8c_SkxRRd8k9bKEmfaZuWiVxjOI0/view?usp=sharing'
+    const downloadPDF = 'https://drive.google.com/u/0/uc?id=1adahk5MZtYTSN3CUz6LYg3eJ82b1k_zw&export=download';
+    const viewPDF = 'https://drive.google.com/file/d/1adahk5MZtYTSN3CUz6LYg3eJ82b1k_zw/view?usp=sharing'
 
 
     return (
