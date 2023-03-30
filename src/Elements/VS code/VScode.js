@@ -33,7 +33,6 @@ function VScode() {
             }
 
             if (data) {
-                console.log(data);
                 setJavascriptProjects(data);
             }
         }
