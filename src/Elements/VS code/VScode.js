@@ -9,7 +9,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 import SmallModal from '../Small Modal/SmallModal';
 import CoffeeCup from '../CoffeeCup/CoffeeCup'
 import javascriptProjects from '../../Local Data/javascriptData'
-// import uiDesigns from '../../Local Data/uiDesignsData';
+import uiDesigns from '../../Local Data/uiDesignsData';
 import certificateData from '../../Local Data/certificateData';
 import supabase from '../../config/supabase';
 import { useEffect } from 'react';
@@ -17,43 +17,43 @@ import { useEffect } from 'react';
 
 function VScode() {
 
-    const [testjavascriptProjects, setJavascriptProjects] = useState(javascriptProjects);
+    const [testjavascriptProjects, javascriptProjects] = useState(javascriptProjects);
     // const [testcertificateData, setCertificateData] = useState(null);
-    const [testuiDesigns, setUiDesigns] = useState(null);
+    const [testuiDesigns, uiDesigns] = useState(null);
     // console.log(javascriptProjects);
 
-    useEffect(() => {
-        const jsData = async () => {
-            const { data, error } = await supabase
-                .from('JavaScript')
-                .select();
-            if (error) {
-                setJavascriptProjects(null)
-                console.log(error);
-            }
+    // useEffect(() => {
+    //     const jsData = async () => {
+    //         const { data, error } = await supabase
+    //             .from('JavaScript')
+    //             .select();
+    //         if (error) {
+    //             setJavascriptProjects(null)
+    //             console.log(error);
+    //         }
 
-            if (data) {
-                setJavascriptProjects(data);
-            }
-        }
+    //         if (data) {
+    //             setJavascriptProjects(data);
+    //         }
+    //     }
 
-        const uiData = async () => {
-            const { data, error } = await supabase
-                .from('UIdesigns')
-                .select();
-            if (error) {
-                setUiDesigns(null)
-                console.log(error);
-            }
+    //     const uiData = async () => {
+    //         const { data, error } = await supabase
+    //             .from('UIdesigns')
+    //             .select();
+    //         if (error) {
+    //             setUiDesigns(null)
+    //             console.log(error);
+    //         }
 
-            if (data) {
-                setUiDesigns(data);
-            }
-        }
+    //         if (data) {
+    //             setUiDesigns(data);
+    //         }
+    //     }
 
-        jsData();
-        uiData();
-    }, [])
+    //     jsData();
+    //     uiData();
+    // }, [])
 
     // console.log(javascriptProjects);
 
